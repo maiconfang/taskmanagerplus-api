@@ -1,0 +1,48 @@
+{
+  "groups": [
+    {
+      "name": "fangfarm",
+      "type": "com.maif.fangfarm.core.property.FangFarmApiProperty",
+      "sourceType": "com.maif.fangfarm.core.property.FangFarmApiProperty"
+    },
+    {
+      "name": "fangfarm.jwt.keystore",
+      "type": "com.maif.fangfarm.core.security.authorizationserver.JwtKeyStoreProperties",
+      "sourceType": "com.maif.fangfarm.core.security.authorizationserver.JwtKeyStoreProperties"
+    },
+    {
+      "name": "fangfarm.seguranca",
+      "type": "com.maif.fangfarm.core.property.FangFarmApiProperty$Seguranca",
+      "sourceType": "com.maif.fangfarm.core.property.FangFarmApiProperty",
+      "sourceMethod": "public com.maif.fangfarm.core.property.FangFarmApiProperty.Seguranca getSeguranca() "
+    }
+  ],
+  "properties": [
+    {
+      "name": "fangfarm.jwt.keystore.jks-location",
+      "type": "org.springframework.core.io.Resource",
+      "sourceType": "com.maif.fangfarm.core.security.authorizationserver.JwtKeyStoreProperties"
+    },
+    {
+      "name": "fangfarm.jwt.keystore.keypair-alias",
+      "type": "java.lang.String",
+      "sourceType": "com.maif.fangfarm.core.security.authorizationserver.JwtKeyStoreProperties"
+    },
+    {
+      "name": "fangfarm.jwt.keystore.password",
+      "type": "java.lang.String",
+      "sourceType": "com.maif.fangfarm.core.security.authorizationserver.JwtKeyStoreProperties"
+    },
+    {
+      "name": "fangfarm.origin-permitida",
+      "type": "java.lang.String",
+      "sourceType": "com.maif.fangfarm.core.property.FangFarmApiProperty"
+    },
+    {
+      "name": "fangfarm.seguranca.enable-https",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.maif.fangfarm.core.property.FangFarmApiProperty$Seguranca"
+    }
+  ],
+  "hints": []
+}
