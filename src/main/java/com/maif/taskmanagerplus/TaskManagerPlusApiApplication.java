@@ -10,12 +10,12 @@ import com.maif.taskmanagerplus.infrastructure.repository.CustomJpaRepositoryImp
 
 @SpringBootApplication
 @EnableJpaRepositories(repositoryBaseClass = CustomJpaRepositoryImpl.class)
-public class FangFarmApiApplication {
+public class TaskManagerPlusApiApplication {
 
 	public static void main(String[] args) {
 		TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
 		
-		SpringApplication.run(FangFarmApiApplication.class, args);
+		SpringApplication.run(TaskManagerPlusApiApplication.class, args);
 	}
 
 }
