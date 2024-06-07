@@ -1,17 +1,17 @@
 {
   "groups": [
     {
-      "name": "fangfarm",
+      "name": "taskmanagerplus",
       "type": "com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty",
       "sourceType": "com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty"
     },
     {
-      "name": "fangfarm.jwt.keystore",
+      "name": "taskmanagerplus.jwt.keystore",
       "type": "com.maif.taskmanagerplus.core.security.authorizationserver.JwtKeyStoreProperties",
       "sourceType": "com.maif.taskmanagerplus.core.security.authorizationserver.JwtKeyStoreProperties"
     },
     {
-      "name": "fangfarm.seguranca",
+      "name": "taskmanagerplus.seguranca",
       "type": "com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty$Seguranca",
       "sourceType": "com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty",
       "sourceMethod": "public com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty.Seguranca getSeguranca() "
@@ -19,27 +19,27 @@
   ],
   "properties": [
     {
-      "name": "fangfarm.jwt.keystore.jks-location",
+      "name": "taskmanagerplus.jwt.keystore.jks-location",
       "type": "org.springframework.core.io.Resource",
       "sourceType": "com.maif.taskmanagerplus.core.security.authorizationserver.JwtKeyStoreProperties"
     },
     {
-      "name": "fangfarm.jwt.keystore.keypair-alias",
+      "name": "taskmanagerplus.jwt.keystore.keypair-alias",
       "type": "java.lang.String",
       "sourceType": "com.maif.taskmanagerplus.core.security.authorizationserver.JwtKeyStoreProperties"
     },
     {
-      "name": "fangfarm.jwt.keystore.password",
+      "name": "taskmanagerplus.jwt.keystore.password",
       "type": "java.lang.String",
       "sourceType": "com.maif.taskmanagerplus.core.security.authorizationserver.JwtKeyStoreProperties"
     },
     {
-      "name": "fangfarm.origin-permitida",
+      "name": "taskmanagerplus.origin-permitida",
       "type": "java.lang.String",
       "sourceType": "com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty"
     },
     {
-      "name": "fangfarm.seguranca.enable-https",
+      "name": "taskmanagerplus.seguranca.enable-https",
       "type": "java.lang.Boolean",
       "sourceType": "com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty$Seguranca"
     }

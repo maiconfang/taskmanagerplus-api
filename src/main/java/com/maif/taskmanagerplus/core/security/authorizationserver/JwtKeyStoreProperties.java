@@ -15,7 +15,7 @@ import lombok.Setter;
 @Getter
 @Validated
 @Component
-@ConfigurationProperties("fangfarm.jwt.keystore")
+@ConfigurationProperties("taskmanagerplus.jwt.keystore")
 public class JwtKeyStoreProperties {
 
 	@NotNull

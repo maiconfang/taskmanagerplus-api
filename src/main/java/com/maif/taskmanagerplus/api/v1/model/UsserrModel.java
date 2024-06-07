@@ -18,7 +18,7 @@ public class UsserrModel extends RepresentationModel<UsserrModel> {
 	@ApiModelProperty(example = "Maicon Alexander")
 	private String name;
 	
-	@ApiModelProperty(example = "maicon.alexander@fangfarm.com.br")
+	@ApiModelProperty(example = "maicon.alexander@taskmanagerplus.com.br")
 	private String email;
 	
 }

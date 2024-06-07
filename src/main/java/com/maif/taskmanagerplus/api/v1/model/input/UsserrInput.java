@@ -18,7 +18,7 @@ public class UsserrInput {
 	@NotBlank
 	private String name;
 	
-	@ApiModelProperty(example = "maicon.alexander@fangfarm.com.br", required = true)
+	@ApiModelProperty(example = "maicon.alexander@taskmanagerplus.com.br", required = true)
 	@NotBlank
 	@Email
 	private String email;
