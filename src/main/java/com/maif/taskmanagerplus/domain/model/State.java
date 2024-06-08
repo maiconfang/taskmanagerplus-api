@@ -29,6 +29,6 @@ public class State {
 	private String name;
 	
 	@Column(nullable = false)
-	private String fs;
+	private String abbreviation;
 	
 }

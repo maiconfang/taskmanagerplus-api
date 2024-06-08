@@ -65,7 +65,7 @@ public class StateController implements StateControllerOpenApi {
 		Pageable pageableTranslate = translatePageable(pageable);
 		Page<State> statesPage = null;
 		
-		if(filter.getName()!=null || filter.getFs()!=null ) {
+		if(filter.getName()!=null || filter.getAbbreviation()!=null ) {
 			statesPage = stateRepository.findAll(StateSpecs.withFilter(filter), pageableTranslate);
 		}
 		else
@@ -82,7 +82,7 @@ public class StateController implements StateControllerOpenApi {
 		
 		List<State> allStates;
 		
-		if(filter.getName()!=null || filter.getFs()!=null ) {
+		if(filter.getName()!=null || filter.getAbbreviation()!=null ) {
 			allStates = stateRepository.findAll(StateSpecs.withFilter(filter));
 		}
 		else

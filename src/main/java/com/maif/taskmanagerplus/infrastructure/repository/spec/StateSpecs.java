@@ -20,8 +20,8 @@ public class StateSpecs {
 				predicates.add(builder.like(root.get("name"), "%" + filter.getName() + "%"));
 			}
 			
-			if (filter.getFs() != null) {
-				predicates.add(builder.equal(root.get("fs"), filter.getFs()));
+			if (filter.getAbbreviation() != null) {
+				predicates.add(builder.equal(root.get("abbreviation"), filter.getAbbreviation()));
 			}
 			
 			return builder.and(predicates.toArray(new Predicate[0]));

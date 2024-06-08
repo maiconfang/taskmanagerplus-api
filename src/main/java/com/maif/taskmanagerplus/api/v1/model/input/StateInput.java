@@ -19,5 +19,5 @@ public class StateInput {
 	
 	@ApiModelProperty(example = "NB", required = true)
 	@NotBlank
-	private String fs;
+	private String abbreviation;
 }

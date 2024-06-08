@@ -15,7 +15,7 @@ public class StateFilter {
 	private String name;
 	
 	@ApiModelProperty(example = "NB", value = "FS of state of search")
-	private String fs;
+	private String abbreviation;
 	
 	
 }

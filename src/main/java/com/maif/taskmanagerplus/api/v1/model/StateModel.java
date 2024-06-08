@@ -19,7 +19,7 @@ public class StateModel extends RepresentationModel<StateModel> {
 	private String name;
 	
 	@ApiModelProperty(example = "NB")
-	private String fs;
+	private String abbreviation;
 	
 	
 }
