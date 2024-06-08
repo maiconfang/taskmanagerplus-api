@@ -7,23 +7,23 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties("taskmanagerplus")
 public class TaskManagerPlusApiProperty {
 
-	private String originPermitida = "http://localhost:8080";
+	private String allowedOrigin = "http://localhost:8080";
 
-	private final Seguranca seguranca = new Seguranca();
+	private final Security security = new Security();
 
-	public Seguranca getSeguranca() {
-		return seguranca;
+	public Security getSecurity() {
+		return security;
 	}
 
-	public String getOriginPermitida() {
-		return originPermitida;
+	public String getAllowedOrigin() {
+		return allowedOrigin;
 	}
 
-	public void setOriginPermitida(String originPermitida) {
-		this.originPermitida = originPermitida;
+	public void setAllowedOrigin(String allowedOrigin) {
+		this.allowedOrigin = allowedOrigin;
 	}
 
-	public static class Seguranca {
+	public static class Security {
 
 		private boolean enableHttps;
 

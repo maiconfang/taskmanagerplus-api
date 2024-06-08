@@ -11,10 +11,10 @@
       "sourceType": "com.maif.taskmanagerplus.core.security.authorizationserver.JwtKeyStoreProperties"
     },
     {
-      "name": "taskmanagerplus.seguranca",
-      "type": "com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty$Seguranca",
+      "name": "taskmanagerplus.security",
+      "type": "com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty$Security",
       "sourceType": "com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty",
-      "sourceMethod": "public com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty.Seguranca getSeguranca() "
+      "sourceMethod": "public com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty.Security getSecurity() "
     }
   ],
   "properties": [
@@ -32,16 +32,6 @@
       "name": "taskmanagerplus.jwt.keystore.password",
       "type": "java.lang.String",
       "sourceType": "com.maif.taskmanagerplus.core.security.authorizationserver.JwtKeyStoreProperties"
-    },
-    {
-      "name": "taskmanagerplus.origin-permitida",
-      "type": "java.lang.String",
-      "sourceType": "com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty"
-    },
-    {
-      "name": "taskmanagerplus.seguranca.enable-https",
-      "type": "java.lang.Boolean",
-      "sourceType": "com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty$Seguranca"
     }
   ],
   "hints": []
