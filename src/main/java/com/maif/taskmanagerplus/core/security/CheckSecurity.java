@@ -39,14 +39,14 @@ public @interface CheckSecurity {
 		
 	}
 	
-	public @interface States {
+	public @interface Provinces {
 		
-		@PreAuthorize("hasAuthority('SCOPE_WRITE') and hasAuthority('EDIT_STATES')")
+		@PreAuthorize("hasAuthority('SCOPE_WRITE') and hasAuthority('EDIT_PROVINCES')")
 		@Retention(RUNTIME)
 		@Target(METHOD)
 		public @interface CanEdit { }
 
-		@PreAuthorize("@maifSecurity.canConsultStates()")
+		@PreAuthorize("@maifSecurity.canConsultProvinces()")
 		@Retention(RUNTIME)
 		@Target(METHOD)
 		public @interface CanConsult { }

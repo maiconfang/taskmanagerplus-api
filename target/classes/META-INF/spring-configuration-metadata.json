@@ -19,6 +19,11 @@
   ],
   "properties": [
     {
+      "name": "taskmanagerplus.allowed-origin",
+      "type": "java.lang.String",
+      "sourceType": "com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty"
+    },
+    {
       "name": "taskmanagerplus.jwt.keystore.jks-location",
       "type": "org.springframework.core.io.Resource",
       "sourceType": "com.maif.taskmanagerplus.core.security.authorizationserver.JwtKeyStoreProperties"
@@ -32,6 +37,11 @@
       "name": "taskmanagerplus.jwt.keystore.password",
       "type": "java.lang.String",
       "sourceType": "com.maif.taskmanagerplus.core.security.authorizationserver.JwtKeyStoreProperties"
+    },
+    {
+      "name": "taskmanagerplus.security.enable-https",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.maif.taskmanagerplus.core.property.TaskManagerPlusApiProperty$Security"
     }
   ],
   "hints": []

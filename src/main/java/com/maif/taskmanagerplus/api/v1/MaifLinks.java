@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import com.maif.taskmanagerplus.api.v1.controller.GroupController;
 import com.maif.taskmanagerplus.api.v1.controller.GroupPermissionController;
 import com.maif.taskmanagerplus.api.v1.controller.PermissionController;
-import com.maif.taskmanagerplus.api.v1.controller.StateController;
+import com.maif.taskmanagerplus.api.v1.controller.ProvinceController;
 import com.maif.taskmanagerplus.api.v1.controller.UserGroupController;
 import com.maif.taskmanagerplus.api.v1.controller.UsserrController;
 
@@ -100,23 +100,23 @@ public class MaifLinks {
 				.disassociate(groupId, permissionId)).withRel(rel);
 	}
 	
-	public Link linkToState(Long stateId, String rel) {
-		return linkTo(methodOn(StateController.class)
-				.find(stateId)).withRel(rel);
+	public Link linkToProvince(Long provinceId, String rel) {
+		return linkTo(methodOn(ProvinceController.class)
+				.find(provinceId)).withRel(rel);
 	}
 	
-	public Link linkToState(Long stateId) {
-		return linkToState(stateId, IanaLinkRelations.SELF.value());
+	public Link linkToProvince(Long provinceId) {
+		return linkToProvince(provinceId, IanaLinkRelations.SELF.value());
 	}
 
 	
-	public Link linkToState(String rel) {
-		return linkTo(StateController.class).withRel(rel);
+	public Link linkToProvince(String rel) {
+		return linkTo(ProvinceController.class).withRel(rel);
 	}
 	
 	
-	public Link linkToStates() {
-		return linkToState(IanaLinkRelations.SELF.value());
+	public Link linkToProvinces() {
+		return linkToProvince(IanaLinkRelations.SELF.value());
 	}
 	
 	

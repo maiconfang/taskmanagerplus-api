@@ -53,7 +53,7 @@ public class MaifSecurity {
 		return isAutenticado() && hasReadingScope();
 	}
 	
-	public boolean canConsultStates() {
+	public boolean canConsultProvinces() {
 		return isAutenticado() && hasReadingScope();
 	}
 	

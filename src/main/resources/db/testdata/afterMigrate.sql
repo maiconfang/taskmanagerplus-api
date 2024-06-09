@@ -1,6 +1,6 @@
 set foreign_key_checks = 0;
 
-delete from state;
+delete from province;
 delete from grouppp;
 delete from grouppp_permission;
 delete from permission;
@@ -10,13 +10,13 @@ delete from oauth_client_details;
 
 set foreign_key_checks = 1;
 
-alter table state auto_increment = 1;
+alter table province auto_increment = 1;
 alter table grouppp auto_increment = 1;
 alter table permission auto_increment = 1;
 alter table usserr auto_increment = 1;
 
 
-insert into permission (id, name, description) values (4, 'EDIT_STATES', 'Allow to create or edit states');
+insert into permission (id, name, description) values (4, 'EDIT_STATES', 'Allow to create or edit provinces');
 insert into permission (id, name, description) values (5, 'CONSULT_USSERRS_GROUPS_PERMISSIONS', 'Allow to consult users, groups and permissions');
 insert into permission (id, name, description) values (6, 'EDIT_USSERRS_GROUPS_PERMISSIONS', 'Allow to create or edit users, groups and permissions');
 insert into permission (id, name, description) values (10, 'VIEW_REPORTS', 'Allow to view reports');
@@ -84,7 +84,7 @@ values (
 );
 
 
-INSERT INTO `state` (`id`, `name`, `abbreviation`) VALUES
+INSERT INTO `province` (`id`, `name`, `abbreviation`) VALUES
 (1, 'Alberta', 'AB'),
 (2, 'British Columbia', 'BC'),
 (3, 'Manitoba', 'MB'),

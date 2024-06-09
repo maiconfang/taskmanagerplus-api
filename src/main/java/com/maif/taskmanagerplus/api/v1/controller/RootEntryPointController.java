@@ -33,8 +33,8 @@ public class RootEntryPointController {
 			rootEntryPointModel.add(maifLinks.linkToPermissions("permissions"));
 		}
 		
-		if (maifSecurity.canConsultStates()) {
-			rootEntryPointModel.add(maifLinks.linkToState("states"));
+		if (maifSecurity.canConsultProvinces()) {
+			rootEntryPointModel.add(maifLinks.linkToProvince("Provinces"));
 		}
 		
 		

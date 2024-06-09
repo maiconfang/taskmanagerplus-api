@@ -25,13 +25,13 @@ import com.fasterxml.classmate.TypeResolver;
 import com.maif.taskmanagerplus.api.exceptionhandler.Problem;
 import com.maif.taskmanagerplus.api.v1.model.GroupppModel;
 import com.maif.taskmanagerplus.api.v1.model.PermissionModel;
-import com.maif.taskmanagerplus.api.v1.model.StateModel;
+import com.maif.taskmanagerplus.api.v1.model.ProvinceModel;
 import com.maif.taskmanagerplus.api.v1.model.UsserrModel;
 import com.maif.taskmanagerplus.api.v1.openapi.model.GroupsModelOpenApi;
 import com.maif.taskmanagerplus.api.v1.openapi.model.LinksModelOpenApi;
 import com.maif.taskmanagerplus.api.v1.openapi.model.PageableModelOpenApi;
-import com.maif.taskmanagerplus.api.v1.openapi.model.PermissoesModelOpenApi;
-import com.maif.taskmanagerplus.api.v1.openapi.model.StatesModelOpenApi;
+import com.maif.taskmanagerplus.api.v1.openapi.model.PermissionsModelOpenApi;
+import com.maif.taskmanagerplus.api.v1.openapi.model.ProvincesModelOpenApi;
 import com.maif.taskmanagerplus.api.v1.openapi.model.UsserrsModelOpenApi;
 
 import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration;
@@ -85,8 +85,8 @@ public class SpringFoxConfig implements WebMvcConfigurer {
 				
 				
 				.alternateTypeRules(AlternateTypeRules.newRule(
-						typeResolver.resolve(CollectionModel.class, StateModel.class),
-						StatesModelOpenApi.class))
+						typeResolver.resolve(CollectionModel.class, ProvinceModel.class),
+						ProvincesModelOpenApi.class))
 				
 				.alternateTypeRules(AlternateTypeRules.newRule(
 						typeResolver.resolve(CollectionModel.class, GroupppModel.class),
@@ -94,7 +94,7 @@ public class SpringFoxConfig implements WebMvcConfigurer {
 				
 				.alternateTypeRules(AlternateTypeRules.newRule(
 						typeResolver.resolve(CollectionModel.class, PermissionModel.class),
-						PermissoesModelOpenApi.class))
+						PermissionsModelOpenApi.class))
 				
 				.alternateTypeRules(AlternateTypeRules.newRule(
 						typeResolver.resolve(CollectionModel.class, UsserrModel.class),
@@ -106,7 +106,7 @@ public class SpringFoxConfig implements WebMvcConfigurer {
 				.apiInfo(apiInfoV1())
 				.tags(
 						new Tag("Groups", "Manager the groups of users"),
-						new Tag("States", "Manager the states"),
+						new Tag("Provinces", "Manager the provinces"),
 						new Tag("Users", "Manager the users"),
 						new Tag("Permissions", "Manger the permissions")
 						);
