@@ -11,34 +11,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 public @interface CheckSecurity {
 
 	
-	public @interface Cities {
-		
-		@PreAuthorize("hasAuthority('SCOPE_WRITE') and hasAuthority('EDIT_CITIES')")
-		@Retention(RUNTIME)
-		@Target(METHOD)
-		public @interface CanEdit { }
-
-		@PreAuthorize("@maifSecurity.canConsultCities()")
-		@Retention(RUNTIME)
-		@Target(METHOD)
-		public @interface CanConsult { }
-		
-	}
-	
-	public @interface Brands {
-		
-		@PreAuthorize("hasAuthority('SCOPE_WRITE') and hasAuthority('EDIT_BRANDS')")
-		@Retention(RUNTIME)
-		@Target(METHOD)
-		public @interface CanEdit { }
-
-		@PreAuthorize("@maifSecurity.canConsultBrands()")
-		@Retention(RUNTIME)
-		@Target(METHOD)
-		public @interface CanConsult { }
-		
-	}
-	
 	public @interface Provinces {
 		
 		@PreAuthorize("hasAuthority('SCOPE_WRITE') and hasAuthority('EDIT_PROVINCES')")
@@ -53,33 +25,6 @@ public @interface CheckSecurity {
 		
 	}
 	
-	public @interface Models {
-		
-		@PreAuthorize("hasAuthority('SCOPE_WRITE') and hasAuthority('EDIT_MODELS')")
-		@Retention(RUNTIME)
-		@Target(METHOD)
-		public @interface CanEdit { }
-
-		@PreAuthorize("@maifSecurity.canConsultModels()")
-		@Retention(RUNTIME)
-		@Target(METHOD)
-		public @interface CanConsult { }
-		
-	}
-	
-	public @interface Employees {
-		
-		@PreAuthorize("hasAuthority('SCOPE_WRITE') and hasAuthority('EDIT_EMPLOYEES')")
-		@Retention(RUNTIME)
-		@Target(METHOD)
-		public @interface CanEdit { }
-
-		@PreAuthorize("@maifSecurity.canConsultEmployees()")
-		@Retention(RUNTIME)
-		@Target(METHOD)
-		public @interface CanConsult { }
-		
-	}
 	
 	public @interface UsersGroupPermission {
 		
@@ -107,33 +52,6 @@ public @interface CheckSecurity {
 		
 	}
 	
-	public @interface Vehicles {
 		
-		@PreAuthorize("hasAuthority('SCOPE_WRITE') and hasAuthority('EDIT_VEHICLES')")
-		@Retention(RUNTIME)
-		@Target(METHOD)
-		public @interface CanEdit { }
-
-		@PreAuthorize("@maifSecurity.canConsultVehicles()")
-		@Retention(RUNTIME)
-		@Target(METHOD)
-		public @interface CanConsult { }
-		
-	}
-	
-	public @interface Animals {
-		
-		@PreAuthorize("hasAuthority('SCOPE_WRITE') and hasAuthority('EDIT_ANIMALS')")
-		@Retention(RUNTIME)
-		@Target(METHOD)
-		public @interface CanEdit { }
-
-		@PreAuthorize("@maifSecurity.canConsultAnimals()")
-		@Retention(RUNTIME)
-		@Target(METHOD)
-		public @interface CanConsult { }
-		
-	}
-	
 	
 }

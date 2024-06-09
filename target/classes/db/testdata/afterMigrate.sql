@@ -16,7 +16,7 @@ alter table permission auto_increment = 1;
 alter table usserr auto_increment = 1;
 
 
-insert into permission (id, name, description) values (4, 'EDIT_STATES', 'Allow to create or edit provinces');
+insert into permission (id, name, description) values (4, 'EDIT_PROVINCES', 'Allow to create or edit provinces');
 insert into permission (id, name, description) values (5, 'CONSULT_USSERRS_GROUPS_PERMISSIONS', 'Allow to consult users, groups and permissions');
 insert into permission (id, name, description) values (6, 'EDIT_USSERRS_GROUPS_PERMISSIONS', 'Allow to create or edit users, groups and permissions');
 insert into permission (id, name, description) values (10, 'VIEW_REPORTS', 'Allow to view reports');

@@ -49,32 +49,10 @@ public class MaifSecurity {
 		return hasWrittenScope() && hasAuthority("EDIT_USSERRS_GROUPS_PERMISSIONS");
 	}
 	
-	public boolean canConsultCities() {
-		return isAutenticado() && hasReadingScope();
-	}
-	
+		
 	public boolean canConsultProvinces() {
 		return isAutenticado() && hasReadingScope();
 	}
 	
-	public boolean canConsultModels() {
-		return isAutenticado() && hasReadingScope();
-	}
-	
-	public boolean canConsultBrands() {
-		return isAutenticado() && hasReadingScope();
-	}
-	
-	public boolean canConsultEmployees() {
-		return isAutenticado() && hasReadingScope();
-	}
-	
-	public boolean canConsultVehicles() {
-		return isAutenticado() && hasReadingScope();
-	}
-	
-	public boolean canConsultAnimals() {
-		return isAutenticado() && hasReadingScope();
-	}
-	
+			
 }
