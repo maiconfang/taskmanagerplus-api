@@ -12,7 +12,7 @@ public class MaifSecurity {
 		return SecurityContextHolder.getContext().getAuthentication();
 	}
 	
-	public boolean isAutenticado() {
+	public boolean isAuthenticated() {
 		return getAuthentication().isAuthenticated();
 	}
 	
@@ -51,7 +51,12 @@ public class MaifSecurity {
 	
 		
 	public boolean canConsultProvinces() {
-		return isAutenticado() && hasReadingScope();
+		return isAuthenticated() && hasReadingScope();
+	}
+	
+	
+	public boolean canConsultTasks() {
+		return isAuthenticated() && hasReadingScope();
 	}
 	
 			

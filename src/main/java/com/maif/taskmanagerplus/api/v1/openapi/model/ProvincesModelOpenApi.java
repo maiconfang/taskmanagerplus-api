@@ -9,7 +9,7 @@ import com.maif.taskmanagerplus.api.v1.model.ProvinceModel;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
-@ApiModel("StatesModel")
+@ApiModel("ProvincesModel")
 @Data
 public class ProvincesModelOpenApi {
 

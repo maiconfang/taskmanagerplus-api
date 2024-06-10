@@ -27,7 +27,7 @@ public class RegisterProvinceService {
 	}
 	
 	@Transactional
-	public void delete(Long provinceId, String provinceState) {
+	public void delete(Long provinceId, String nameProvince) {
 		try {
 			provinceRepository.deleteById(provinceId);
 			provinceRepository.flush();
@@ -37,13 +37,13 @@ public class RegisterProvinceService {
 		
 		} catch (DataIntegrityViolationException e) {
 			throw new EntityInUseException(
-				String.format(MSG_PROVINCE_IN_USE_NAME, provinceState));
+				String.format(MSG_PROVINCE_IN_USE_NAME, nameProvince));
 		}
 	}
 
-	public Province findOrFail(Long stateId) {
-		return provinceRepository.findById(stateId)
-			.orElseThrow(() -> new ProvinceNotFoundException(stateId));
+	public Province findOrFail(Long provinceId) {
+		return provinceRepository.findById(provinceId)
+			.orElseThrow(() -> new ProvinceNotFoundException(provinceId));
 	}
 	
 }

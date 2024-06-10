@@ -14,6 +14,7 @@ import com.maif.taskmanagerplus.api.v1.controller.GroupController;
 import com.maif.taskmanagerplus.api.v1.controller.GroupPermissionController;
 import com.maif.taskmanagerplus.api.v1.controller.PermissionController;
 import com.maif.taskmanagerplus.api.v1.controller.ProvinceController;
+import com.maif.taskmanagerplus.api.v1.controller.TaskController;
 import com.maif.taskmanagerplus.api.v1.controller.UserGroupController;
 import com.maif.taskmanagerplus.api.v1.controller.UsserrController;
 
@@ -100,6 +101,7 @@ public class MaifLinks {
 				.disassociate(groupId, permissionId)).withRel(rel);
 	}
 	
+	// Province
 	public Link linkToProvince(Long provinceId, String rel) {
 		return linkTo(methodOn(ProvinceController.class)
 				.find(provinceId)).withRel(rel);
@@ -109,16 +111,33 @@ public class MaifLinks {
 		return linkToProvince(provinceId, IanaLinkRelations.SELF.value());
 	}
 
-	
 	public Link linkToProvince(String rel) {
 		return linkTo(ProvinceController.class).withRel(rel);
 	}
-	
-	
+		
 	public Link linkToProvinces() {
 		return linkToProvince(IanaLinkRelations.SELF.value());
 	}
+
+	// Task
+	public Link linkToTask(Long taskId, String rel) {
+		return linkTo(methodOn(TaskController.class)
+				.find(taskId)).withRel(rel);
+	}
 	
+	public Link linkToTask(Long taskId) {
+		return linkToTask(taskId, IanaLinkRelations.SELF.value());
+	}
+
+	
+	public Link linkToTask(String rel) {
+		return linkTo(TaskController.class).withRel(rel);
+	}
+	
+	
+	public Link linkToTasks() {
+		return linkToTask(IanaLinkRelations.SELF.value());
+	}
 	
 	
 }

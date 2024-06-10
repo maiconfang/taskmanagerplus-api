@@ -196,8 +196,8 @@ public class SpringFoxConfig implements WebMvcConfigurer {
 	
 	private ApiInfo apiInfoV1() {
 		return new ApiInfoBuilder()
-				.title("MaifFarm API")
-				.description("API that manager the farm")
+				.title("TaskManagerPlus API")
+				.description("API that manager the task")
 				.version("1")
 				.contact(new Contact("Maif", "https://www.gomaif.com", "contact@gomaif.com"))
 				.build();

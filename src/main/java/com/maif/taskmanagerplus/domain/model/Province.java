@@ -18,7 +18,7 @@ import lombok.EqualsAndHashCode;
 @Entity
 public class Province {
 
-	@NotNull(groups = Groups.StateId.class)
+	@NotNull(groups = Groups.ProvinceId.class)
 	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,28 +1,34 @@
 set foreign_key_checks = 0;
 
-delete from province;
 delete from grouppp;
 delete from grouppp_permission;
 delete from permission;
 delete from usserr;
 delete from usserr_grouppp;
 delete from oauth_client_details;
+delete from province;
+delete from task;
 
 set foreign_key_checks = 1;
 
-alter table province auto_increment = 1;
 alter table grouppp auto_increment = 1;
 alter table permission auto_increment = 1;
 alter table usserr auto_increment = 1;
+alter table province auto_increment = 1;
+alter table task auto_increment = 1;
 
 
 insert into permission (id, name, description) values (4, 'EDIT_PROVINCES', 'Allow to create or edit provinces');
 insert into permission (id, name, description) values (5, 'CONSULT_USSERRS_GROUPS_PERMISSIONS', 'Allow to consult users, groups and permissions');
 insert into permission (id, name, description) values (6, 'EDIT_USSERRS_GROUPS_PERMISSIONS', 'Allow to create or edit users, groups and permissions');
 insert into permission (id, name, description) values (10, 'VIEW_REPORTS', 'Allow to view reports');
+insert into permission (id, name, description) values (11, 'EDIT_TASKS', 'Allow to create or edit tasks');
 
-
-insert into grouppp (id, name) values (1, 'Manager'), (2, 'Seller'), (3, 'Secretary'), (4, 'Register');
+insert into grouppp (id, name) values 
+                    (1, 'Manager'), 
+                    (2, 'Seller'), 
+                    (3, 'Secretary'), 
+                    (4, 'Register');
 
 
 # Add all permissions in manager grouppp
@@ -98,5 +104,21 @@ INSERT INTO `province` (`id`, `name`, `abbreviation`) VALUES
 (11, 'Northwest Territories', 'NT'),
 (12, 'Nunavut', 'NU'),
 (13, 'Yukon', 'YT');
+
+
+INSERT INTO `task` (`id`, `title`, `description`, `due_date`, `completed`, `created_at`, `updated_at`) VALUES
+(1, 'Task 1', 'Description for Task 1', '2024-06-30', 0, '2024-06-01 12:00:00', '2024-06-01 12:00:00'),
+(2, 'Task 2', 'Description for Task 2', '2024-07-01', 0, '2024-06-01 13:00:00', '2024-06-01 13:00:00'),
+(3, 'Task 3', 'Description for Task 3', '2024-07-02', 1, '2024-06-01 14:00:00', '2024-06-02 14:00:00'),
+(4, 'Task 4', 'Description for Task 4', '2024-07-03', 0, '2024-06-01 15:00:00', '2024-06-01 15:00:00'),
+(5, 'Task 5', 'Description for Task 5', '2024-07-04', 1, '2024-06-01 16:00:00', '2024-06-03 16:00:00'),
+(6, 'Task 6', 'Description for Task 6', '2024-07-05', 0, '2024-06-01 17:00:00', '2024-06-01 17:00:00'),
+(7, 'Task 7', 'Description for Task 7', '2024-07-06', 1, '2024-06-01 18:00:00', '2024-06-04 18:00:00'),
+(8, 'Task 8', 'Description for Task 8', '2024-07-07', 0, '2024-06-01 19:00:00', '2024-06-01 19:00:00'),
+(9, 'Task 9', 'Description for Task 9', '2024-07-08', 1, '2024-06-01 20:00:00', '2024-06-05 20:00:00'),
+(10, 'Task 10', 'Description for Task 10', '2024-07-09', 0, '2024-06-01 21:00:00', '2024-06-01 21:00:00'),
+(11, 'Task 11', 'Description for Task 11', '2024-07-10', 1, '2024-06-01 22:00:00', '2024-06-06 22:00:00'),
+(12, 'Task 12', 'Description for Task 12', '2024-07-11', 0, '2024-06-01 23:00:00', '2024-06-01 23:00:00');
+
 
 

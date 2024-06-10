@@ -25,6 +25,20 @@ public @interface CheckSecurity {
 		
 	}
 	
+	public @interface Tasks {
+		
+		@PreAuthorize("hasAuthority('SCOPE_WRITE') and hasAuthority('EDIT_TASKS')")
+		@Retention(RUNTIME)
+		@Target(METHOD)
+		public @interface CanEdit { }
+
+		@PreAuthorize("@maifSecurity.canConsultTasks()")
+		@Retention(RUNTIME)
+		@Target(METHOD)
+		public @interface CanConsult { }
+		
+	}
+	
 	
 	public @interface UsersGroupPermission {
 		

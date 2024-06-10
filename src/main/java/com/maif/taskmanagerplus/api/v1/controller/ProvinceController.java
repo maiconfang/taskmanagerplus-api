@@ -80,15 +80,15 @@ public class ProvinceController implements ProvinceControllerOpenApi {
 	@GetMapping("/noPagination")
 	public CollectionModel<ProvinceModel> listNoPagination(ProvinceFilter filter) {
 		
-		List<Province> allStates;
+		List<Province> allProvinces;
 		
 		if(filter.getName()!=null || filter.getAbbreviation()!=null ) {
-			allStates = provinceRepository.findAll(ProvinceSpecs.withFilter(filter));
+			allProvinces = provinceRepository.findAll(ProvinceSpecs.withFilter(filter));
 		}
 		else
-			allStates = provinceRepository.findAll();
+			allProvinces = provinceRepository.findAll();
 		
-		return provinceModelAssembler.toCollectionModel(allStates);
+		return provinceModelAssembler.toCollectionModel(allProvinces);
 	}
 	
 	@CheckSecurity.Provinces.CanConsult
