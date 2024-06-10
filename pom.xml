@@ -20,7 +20,6 @@
 		<java.version>11</java.version>
 		<modelmapper.version>2.3.0</modelmapper.version>
 		<squiggly.version>1.3.18</squiggly.version>
-		<jasperreports.version>6.18.0</jasperreports.version>
 		<aws-java-sdk-s3.version>1.11.671</aws-java-sdk-s3.version>
 		<springfox.version>2.9.2</springfox.version>
 		<logback-ext-loggly.version>0.1.5</logback-ext-loggly.version>
@@ -71,11 +70,6 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>io.rest-assured</groupId>
-			<artifactId>rest-assured</artifactId>
-			<scope>test</scope>
-		</dependency>
 
 		<dependency>
 			<groupId>org.modelmapper</groupId>
@@ -93,18 +87,6 @@
 					<artifactId>guava</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports</artifactId>
-			<version>${jasperreports.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports-functions</artifactId>
-			<version>${jasperreports.version}</version>
 		</dependency>
 
 		<dependency>
