@@ -1,5 +1,6 @@
 package com.maif.taskmanagerplus.infrastructure.repository.spec;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 
 import javax.persistence.criteria.Predicate;
@@ -22,6 +23,15 @@ public class TaskSpecs {
 			
 			if (filter.getDescription() != null) {
 				predicates.add(builder.equal(root.get("description"), filter.getDescription()));
+			}
+			
+			if (filter.getDueDate() != null) {
+			    OffsetDateTime dueDate = OffsetDateTime.parse(filter.getDueDate());
+			    predicates.add(builder.equal(root.get("dueDate"), dueDate));
+			}
+
+			if (filter.getCompleted() != null) {
+				predicates.add(builder.equal(root.get("completed"), filter.getCompleted()));
 			}
 			
 			return builder.and(predicates.toArray(new Predicate[0]));

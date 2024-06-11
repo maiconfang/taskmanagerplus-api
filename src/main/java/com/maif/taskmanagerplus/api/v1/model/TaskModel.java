@@ -9,7 +9,7 @@ import lombok.Setter;
 
 import java.time.OffsetDateTime;
 
-@Relation(collectionRelation = "provinces")
+@Relation(collectionRelation = "tasks")
 @Setter
 @Getter
 public class TaskModel extends RepresentationModel<TaskModel> {

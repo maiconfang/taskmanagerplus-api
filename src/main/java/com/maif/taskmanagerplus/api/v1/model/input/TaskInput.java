@@ -21,6 +21,8 @@ public class TaskInput {
     @ApiModelProperty(example = "Task Description")
     private String description;
 
+    // It serves to store the due date (or deadline, expire) of the task.
+    // It serves to store the expiration date (or deadline) of the task.
     @ApiModelProperty(example = "2024-06-10")
     private OffsetDateTime dueDate;
 

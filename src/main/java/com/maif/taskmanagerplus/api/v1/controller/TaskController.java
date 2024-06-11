@@ -65,7 +65,7 @@ public class TaskController implements TaskControllerOpenApi {
 		Pageable pageableTranslate = translatePageable(pageable);
 		Page<Task> tasksPage = null;
 		
-		if(filter.getTitle()!=null || filter.getDescription()!=null ) {
+		if(filter.getTitle()!=null || filter.getDescription()!=null || filter.getDueDate()!=null || filter.getCompleted()!=null ) {
 			tasksPage = taskRepository.findAll(TaskSpecs.withFilter(filter), pageableTranslate);
 		}
 		else
