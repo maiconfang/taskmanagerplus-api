@@ -13,8 +13,11 @@ public enum ProblemType {
 	RESOURCE_NOT_FOUND("/resource-not-found", "Resource not found"),
 	ENTITY_IN_USE("/entity-in-use", "Entity in use"),
 	ERROR_BUSINESS("/error-business", "Business rule violation"),
-	ERROR_FORMAT("/error-format", "Inalid format");
+	ERROR_FORMAT("/error-format", "Inalid format"),
+	MAX_LENGTH("/max-length", "Maximum length exceeded"), 
+	INVALID_REQUEST_BODY("/invalid-request-body", "Invalid request body. Check the format of all fields and try again.");
 	
+		
 	private String title;
 	private String uri;
 	

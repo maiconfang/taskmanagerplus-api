@@ -146,4 +146,9 @@ public class TaskController implements TaskControllerOpenApi {
 		return PageableTranslator.translate(apiPageable, mapping);
 	}
 	
+    @GetMapping("/hello")
+    public String helloWorld() {
+        return "Hello World!";
+    }
+	
 }

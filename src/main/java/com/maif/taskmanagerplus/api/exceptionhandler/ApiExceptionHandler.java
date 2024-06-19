@@ -1,11 +1,13 @@
 package com.maif.taskmanagerplus.api.exceptionhandler;
 
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.TypeMismatchException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +31,8 @@ import com.maif.taskmanagerplus.domain.exception.EntityInUseException;
 import com.maif.taskmanagerplus.domain.exception.EntityNotFoundException;
 
 import lombok.extern.slf4j.Slf4j;
+
+import com.mysql.cj.jdbc.exceptions.MysqlDataTruncation;
 
 @Slf4j
 @ControllerAdvice
@@ -59,6 +63,42 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
 		return handleExceptionInternal(ex, problem, new HttpHeaders(), status, request);
 	}
+	
+	
+    @ExceptionHandler(MysqlDataTruncation.class)
+    public ResponseEntity<Object> handleMysqlDataTruncation(MysqlDataTruncation ex, WebRequest request) {
+        HttpStatus status = HttpStatus.BAD_REQUEST;
+
+        String detail = "Data too long for column. " + ex.getMessage() + ". Please shorten the data and try again.";
+
+        Problem problem = createProblemBuilder(status, ProblemType.MAX_LENGTH, detail)
+                .userMessage(MSG_ERROR_GENERIC_FINAL_USER)
+                .build();
+        
+        System.out.println(problem);
+
+        return handleExceptionInternal(ex, problem, new HttpHeaders(), status, request);
+    }
+	
+    
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<Object> handleDataIntegrityViolation(DataIntegrityViolationException ex, WebRequest request) {
+        Throwable rootCause = ex.getRootCause();
+        if (rootCause instanceof MysqlDataTruncation) {
+            return handleMysqlDataTruncation((MysqlDataTruncation) rootCause, request);
+        }
+        
+        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
+        String detail = "Data integrity violation occurred. Please contact support.";
+
+        Problem problem = createProblemBuilder(status, ProblemType.MAX_LENGTH, detail)
+                .userMessage(MSG_ERROR_GENERIC_FINAL_USER)
+                .build();
+
+        return handleExceptionInternal(ex, problem, new HttpHeaders(), status, request);
+    }
+    
+    
 	
 	@Override
 	protected ResponseEntity<Object> handleNoHandlerFoundException(NoHandlerFoundException ex, 
@@ -108,6 +148,21 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex,
 			HttpHeaders headers, HttpStatus status, WebRequest request) {
 		Throwable rootCause = ExceptionUtils.getRootCause(ex);
+		
+		if (rootCause instanceof DateTimeParseException) {
+	        DateTimeParseException dtpe = (DateTimeParseException) rootCause;
+	        String invalidValue = dtpe.getParsedString();
+	        String message = "Failed to parse date value '" + invalidValue + "'. Please use ISO-8601 format (e.g., 'yyyy-MM-dd'T'HH:mm:ss'Z').";
+
+	        ProblemType problemType = ProblemType.INVALID_REQUEST_BODY;
+	        String detail = "Failed to parse date value in request body. Check date format and try again.";
+
+	        Problem problem = createProblemBuilder(status, problemType, detail)
+	                .userMessage(message)
+	                .build();
+
+	        return handleExceptionInternal(ex, problem, headers, status, request);
+	    }
 		
 		if (rootCause instanceof InvalidFormatException) {
 			return handleInvalidFormat((InvalidFormatException) rootCause, headers, status, request);
@@ -189,7 +244,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	}
 	
 	@ExceptionHandler(EntityInUseException.class)
-	public ResponseEntity<?> handleEntidadeEmUso(EntityInUseException ex, WebRequest request) {
+	public ResponseEntity<?> handleEntidadeInUse(EntityInUseException ex, WebRequest request) {
 		
 		HttpStatus status = HttpStatus.CONFLICT;
 		ProblemType problemType = ProblemType.ENTITY_IN_USE;

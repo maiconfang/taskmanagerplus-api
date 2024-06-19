@@ -9,7 +9,7 @@ import com.maif.taskmanagerplus.domain.filter.PermissionFilter;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-@Api(tags = "Permisssions")
+@Api(tags = "Permissions")
 public interface PermissionControllerOpenApi {
 
 	@ApiOperation("List the permissions")

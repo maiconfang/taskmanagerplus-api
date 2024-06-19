@@ -114,7 +114,7 @@ public class SpringFoxConfig implements WebMvcConfigurer {
 	
 	private SecurityScheme securityScheme() {
 		return new OAuthBuilder()
-				.name("MaifFarm")
+				.name("TaskManagerPlus-API")
 				.grantTypes(grantTypes())
 				.scopes(scopes())
 				.build();
@@ -199,7 +199,7 @@ public class SpringFoxConfig implements WebMvcConfigurer {
 				.title("TaskManagerPlus API")
 				.description("API that manager the task")
 				.version("1")
-				.contact(new Contact("Maif", "https://www.gomaif.com", "contact@gomaif.com"))
+				.contact(new Contact("Maif", "https://www.maifapi.com", "contact@maifapi.com"))
 				.build();
 	}
 	
