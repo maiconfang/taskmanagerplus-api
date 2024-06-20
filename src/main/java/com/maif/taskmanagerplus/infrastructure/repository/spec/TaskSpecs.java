@@ -17,6 +17,10 @@ public class TaskSpecs {
 			
 			var predicates = new ArrayList<Predicate>();
 			
+			if (filter.getTaskId() != null) {
+				predicates.add(builder.equal(root.get("id"), filter.getTaskId()));
+			}
+			
 			if (filter.getTitle() != null) {
 				predicates.add(builder.like(root.get("title"), "%" + filter.getTitle() + "%"));
 			}
