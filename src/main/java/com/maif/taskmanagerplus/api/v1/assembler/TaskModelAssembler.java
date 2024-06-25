@@ -35,7 +35,7 @@ public class TaskModelAssembler
 		modelMapper.map(task, taskModel);
 		
 		if (maifSecurity.canConsultTasks()) {
-			taskModel.add(maifLinks.linkToProvince("tasks"));
+			taskModel.add(maifLinks.linkToTask("tasks"));
 		}
 		
 		return taskModel;
