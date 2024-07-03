@@ -1,5 +1,7 @@
 package com.maif.taskmanagerplus.domain.filter;
 
+import java.time.LocalDate;
+
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +20,7 @@ public class TaskFilter {
     private String description;
 
     @ApiModelProperty(example = "2024-12-31", value = "Due date of the task")
-    private String dueDate;
+    private LocalDate dueDate;
 
     @ApiModelProperty(example = "false", value = "Completion status of the task")
     private Boolean completed;

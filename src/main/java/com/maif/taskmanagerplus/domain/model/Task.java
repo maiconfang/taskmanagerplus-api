@@ -1,5 +1,6 @@
 package com.maif.taskmanagerplus.domain.model;
 
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 
 import javax.persistence.Column;
@@ -37,7 +38,7 @@ public class Task {
     private String description;
 
     @Column(name = "due_date")
-    private OffsetDateTime dueDate;
+    private LocalDate dueDate;
 
     @NotNull
     @Column(nullable = false, columnDefinition = "tinyint(1) default 0")

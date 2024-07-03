@@ -1,13 +1,13 @@
 package com.maif.taskmanagerplus.api.v1.model;
 
+import java.time.LocalDate;
+
 import org.springframework.hateoas.RepresentationModel;
 import org.springframework.hateoas.server.core.Relation;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.time.OffsetDateTime;
 
 @Relation(collectionRelation = "tasks")
 @Setter
@@ -24,7 +24,7 @@ public class TaskModel extends RepresentationModel<TaskModel> {
 	private String description;
 
 	@ApiModelProperty(example = "2024-12-31")
-	private OffsetDateTime dueDate;
+	private LocalDate dueDate;
 
 	@ApiModelProperty(example = "false")
 	private Boolean completed;

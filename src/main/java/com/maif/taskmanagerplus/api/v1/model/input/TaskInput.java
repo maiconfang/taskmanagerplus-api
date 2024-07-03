@@ -1,9 +1,10 @@
 package com.maif.taskmanagerplus.api.v1.model.input;
 
+import java.time.LocalDate;
+
 import javax.validation.constraints.NotNull;
 
 import io.swagger.annotations.ApiModelProperty;
-import java.time.OffsetDateTime;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,7 +25,7 @@ public class TaskInput {
     // It serves to store the due date (or deadline, expire) of the task.
     // It serves to store the expiration date (or deadline) of the task.
     @ApiModelProperty(example = "2024-06-10")
-    private OffsetDateTime dueDate;
+    private LocalDate dueDate;
 
     @ApiModelProperty(example = "false", required = true)
     @NotNull
